@@ -6,4 +6,5 @@ categories: jekyll update
 ---
 
 我开始了博客记录生活，这将成为我技术成长的见证，加油 coding！
+<br>
 你是第一个见证我博客的人，不过你是谁？
