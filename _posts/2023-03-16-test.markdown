@@ -73,7 +73,7 @@ categories: jekyll update
 ---
 同二级标题的标识
 ## 链接语法
-格式为![链接]()  <br>
+格式为![链接](/lp.png)  <br>
 这是个链接[Markdown语法教程](https://markdown.com.cn "最好的markdown教程")。<br>
 使用尖括号<https://markdown.com.cn><br>
 带格式化的链接<br>
@@ -86,7 +86,10 @@ categories: jekyll update
 [1]:https://markdown.com.cn
 ## 图片语法
 ---
-![格式](/ip.png)<br>
+格式为<br>
+![格式](/ip.png)
+
+
 ![这是图片](https://ts1.cn.mm.bing.net/th/id/R-C.d88442788ee5a458d50e40f0a8cb1e05?rik=EoPp8GhejYeQfw&riu=http%3a%2f%2fimg.pconline.com.cn%2fimages%2fupload%2fupc%2ftx%2fwallpaper%2f1307%2f10%2fc2%2f23151595_1373424485102.jpg&ehk=J7xq%2f50bCmdD4jUXfnTlau2s5WiVsBxQArAjvJzqIo4%3d&risl=&pid=ImgRaw&r=0 "风景照")
 <br>
 给图片增加链接<br>
