@@ -29,7 +29,7 @@ twitter_username: noe
 github_username: sanyier312
 
 # Build settings
-theme: minima
+theme: Hacker
 plugins:
   - jekyll-feed
 # Exclude from processing.
