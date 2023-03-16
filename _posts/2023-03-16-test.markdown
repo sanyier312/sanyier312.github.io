@@ -1,7 +1,102 @@
 ---
 layout: post
-title: "测试"
+title: "markdown 复习"
 date: 2023-03-16 18:38:53 +0800
 categories: jekyll update
 ---
-这是一个测试哈哈哈
+# markdown语法
+## 标题语法 
+---
+用三个-来标识二级标题
+### 三级
+用#的个数代表标题的大小
+## 段落语法
+---
+创建段落用空白行分隔
+
+这是第二段
+## 换行语法
+---
+第一行  用br换行 <br>
+第二行
+## 强调语法
+---
+### 粗体
+**粗体** 用两个*来实现<br>
+*斜体* 用一个*来实现<br>
+***粗体和斜体*** 用三个*来实现
+## 引用语法
+---
+>这是一个块引用 通过>来实现
+>
+>> 这是嵌套块引用
+> # 标题在块引用里能实现
+>> ## 二级
+>> ---
+>>**哈哈哈***
+## 列表语法
+---
+### 有序列表
+1. 第一 注意空格 
+2. 第二
+3. 第三
+### 无序列表
+- 无序
+- 无序
+- 无序
+### 嵌套 
+- a
+- b
+  > 引用
+- c
+
+   段落
+
+- d 
+  1. 有序
+  2. 嵌套
+     - 套娃 
+- e
+## 代码语法
+---
+代码用反引号包裹  `int a`<br>
+代码块用三个反引号和一个花括号写 语法高亮在反引号后加上语言名
+```c
+{
+    int a;
+    a = 1;
+    printf("%d",a);
+
+}
+```
+## 分隔线语法
+---
+同二级标题的标识
+## 链接语法
+格式为  <br>
+这是个链接[Markdown语法教程](https://markdown.com.cn "最好的markdown教程")。<br>
+使用尖括号<https://markdown.com.cn><br>
+带格式化的链接<br>
+链接名加粗加斜 ***[粗斜链接](https://markdown.com.cn)***<br>
+代码内的链接<br>
+[`int`](#code)<br>
+### 引用链接
+[文本内链接一][1] 第二个方括号里可以是字母数字标点<br>
+在文末或者某个位置<br>
+[1]:https://markdown.com.cn
+## 图片语法
+---
+格式<br>
+![这是图片](https://ts1.cn.mm.bing.net/th/id/R-C.d88442788ee5a458d50e40f0a8cb1e05?rik=EoPp8GhejYeQfw&riu=http%3a%2f%2fimg.pconline.com.cn%2fimages%2fupload%2fupc%2ftx%2fwallpaper%2f1307%2f10%2fc2%2f23151595_1373424485102.jpg&ehk=J7xq%2f50bCmdD4jUXfnTlau2s5WiVsBxQArAjvJzqIo4%3d&risl=&pid=ImgRaw&r=0 "风景照")
+<br>
+给图片增加链接<br>
+将图片的语法用[]括起来之后按链接的格式<br>
+[![星空](https://ts1.cn.mm.bing.net/th/id/R-C.909139736b8bee17b50707506f7f803c?rik=PPGA9Jzj8BtLiQ&riu=http%3a%2f%2fuploadfile.bizhizu.cn%2f2015%2f1221%2f20151221022310156.jpg&ehk=jYE8M%2fmDiA4z%2bHbJs1crsA5i%2f7L577w2ZcPor%2bs0AqI%3d&risl=&pid=ImgRaw&r=0 "点击到图片原站") ](https://ts1.cn.mm.bing.net/th/id/R-C.909139736b8bee17b50707506f7f803c?rik=PPGA9Jzj8BtLiQ&riu=http%3a%2f%2fuploadfile.bizhizu.cn%2f2015%2f1221%2f20151221022310156.jpg&ehk=jYE8M%2fmDiA4z%2bHbJs1crsA5i%2f7L577w2ZcPor%2bs0AqI%3d&risl=&pid=ImgRaw&r=0)
+<br>
+## 转义字符语法
+---
+加反斜杠 \*<br>
+特殊的 
+##  内嵌HTML
+---
+可在Markdown里直接使用html
