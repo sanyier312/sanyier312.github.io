@@ -4,3 +4,293 @@ title: "Vue学习"
 date: 2023-03-16 21:24:30 +0800
 categories: study
 ---
+## 什么是Vue
+Vue是一款用于构建用户界面的 JavaScript 框架。是一种模板语法。
+
+---
+### Vue的核心功能：
+- **声明式渲染**
+- **响应式**
+---
+### 两种书写风格
+1. **选项式**  ？面向对象
+2. **组合式**   ？面向过程
+
+---
+## 基础
+
+###
+
+
+### 声明式渲染
+
+通过js的状态来描述html，改变时触发新的状态（响应式状态），选用选项式时用`data`组件来声明响应式状态，
+
+这个选项为一个返回对象的函数
+```js
+
+    export default {
+  data() {
+    return {
+      message: 'Hello World!'
+    }
+  }
+}
+
+ ``` 
+
+data中的属性可以在模板中使用
+{{ }}来渲染
+```html
+<h1>{{ message }}</h1>
+```
+
+练习<br>
+代码
+```html
+<script>
+export default {
+  data() {
+    return {
+      message: 'Hello World!',
+      counter: {
+        count: 0
+      }
+    }
+  }
+}
+</script>
+
+<template>
+  <h1>{{ message }}</h1>
+  <p>Count is: {{ counter.count }}</p>
+</template>
+```
+显示
+>**Hello world!**
+>
+>Cout is 0
+---
+### Attribute 绑定
+
+绑定对象
+
+将元素的id 与组件状态中的dynamicId属性保持同步
+```html
+<div :id="dynamicId"><div/>
+```
+
+实例
+
+给标题绑定一个动态的class
+```html
+<script>
+export default {
+  data() {
+    return {
+      titleClass: 'title'
+    }
+  }
+}
+</script>
+
+<template>
+  <h1 :class="titleClass">Make me red</h1>
+</template>
+
+<style>
+.title {
+  color: red;
+}
+</style>
+```
+
+
+动态绑定多个值
+
+```js
+data() {
+  return {
+    objectOfAttrs: {
+      id: 'container',
+      class: 'wrapper'
+    }
+  }
+}
+
+```
+
+>```html
+><div v-bind="objectOfAttrs"></div>
+>```
+---
+### 事件监听
+
+v-on 
+简写方法@
+>```html 
+><button @click="method">{{ count }}</button>
+>```
+
+实例 实现一个方法，方法绑定了this
+
+ 以及通过v-on将其绑定在按钮上
+
+
+```html
+<script>
+export default {
+  data() {
+    return {
+      count: 0
+    }
+  },
+  methods: {
+    add(){
+      this.count++
+    }
+  }
+}
+  
+</script>
+
+<template>
+  <!-- 使此按钮生效 -->
+  <button @click="add">count is: {{ count }}</button>
+</template>
+```
+
+---
+### 表单绑定
+
+通过同时使用v-on 和v-bind来实现表单输入元素的双向绑定
+
+简化 v-model 使p中文本随着输入更新
+
+```html
+<script>
+export default {
+  data() {
+    return {
+      text: ''
+    }
+  }
+}
+</script>
+
+<template>
+  <input v-model="text" placeholder="Type here">
+  <p>{{ text }}</p>
+</template>
+```
+
+---
+### 条件渲染
+
+使用v-if来有条件的渲染
+
+实例   按钮点击切换不同的状态
+
+```html
+<script>
+export default {
+  data() {
+    return {
+      awesome: true
+    }
+  },
+  methods: {
+    toggle() {
+      this.awesome = !this.awesome
+    }
+  }
+}
+</script>
+
+<template>
+  <button @click="toggle">toggle</button>
+  <h1 v-if="awesome">Vue is awesome!</h1>
+  <h1 v-else>Oh no 😢</h1>
+</template>
+
+```
+---
+
+### 列表渲染
+
+
+v-for 指令来渲染一个基于数组的列表
+
+```html
+<ul>
+  <li v-for="todo in todos" :key="todo.id">
+    {{ todo.text }}
+  </li>
+</ul>
+
+```
+其中`todo`表示的是正在迭代的数组元素
+
+更新列表的方法
+
+1. 调用方法
+    
+    ```js
+    this.todos.push(newTodo)
+    ```
+2. 使用新的数组代替
+    ```js
+    this.todos = this.todos.filter(/* ... */)
+    ```
+
+
+实例   实现增加和删除todolist
+
+```html
+<script>
+// 给每个 todo 对象一个唯一的 id
+let id = 0
+
+export default {
+  data() {
+    return {
+      newTodo: '',
+      todos: [
+        { id: id++, text: 'Learn HTML' },
+        { id: id++, text: 'Learn JavaScript' },
+        { id: id++, text: 'Learn Vue' }
+      ]
+    }
+  },
+  methods: {
+    addTodo() {
+      this.todos.push({ id: id++, text: this.newTodo })
+      this.newTodo = ''
+    },
+    removeTodo(todo) {
+      this.todos = this.todos.filter((t) => t !== todo)
+    }
+  }
+}
+</script>
+
+<template>
+  <form @submit.prevent="addTodo">
+    <input v-model="newTodo">
+    <button>Add Todo</button>    
+  </form>
+  <ul>
+    <li v-for="todo in todos" :key="todo.id">
+      {{ todo.text }}
+      <button @click="removeTodo(todo)">X</button>
+    </li>
+  </ul>
+</template>
+```
+
+---
+### 计算属性
+
+`computed`选项来声明
+
+
