@@ -1,1 +1,15 @@
+---
+layout: post
+title: "missing-semester之 the shell"
+date: 2023-03-20 18:39:30 +0800
+categories: study
+---
+# **The shell**
+ bash   Unix shell的一种
+
+ - date 日期
+ - echo 打印
+   - echo $path  显示当前PATH环境变量（linux上）
+
+
 
