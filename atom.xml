@@ -6,7 +6,7 @@
   <link href="http://sanyier312.github.io/atom.xml" rel="self"/>
   
   <link href="http://sanyier312.github.io/"/>
-  <updated>2025-04-08T08:21:17.523Z</updated>
+  <updated>2025-04-08T10:40:25.730Z</updated>
   <id>http://sanyier312.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博客0</title>
+    <link href="http://sanyier312.github.io/2025/04/08/bo-ke-0/"/>
+    <id>http://sanyier312.github.io/2025/04/08/bo-ke-0/</id>
+    <published>2025-04-08T10:26:22.000Z</published>
+    <updated>2025-04-08T10:40:25.730Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;博客0&quot;&gt;&lt;a href=&quot;#博客0&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="说明" scheme="http://sanyier312.github.io/categories/%E8%AF%B4%E6%98%8E/"/>
+    
+    
+    <category term="开始" scheme="http://sanyier312.github.io/tags/%E5%BC%80%E5%A7%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
